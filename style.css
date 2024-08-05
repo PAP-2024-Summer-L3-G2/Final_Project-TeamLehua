@@ -57,10 +57,10 @@ h1 {
     font-weight: lighter;
 }
 
-#bee-gif {
+.bee-gif {
     position: absolute;
-    left: 10px;
-    top: 10px;
+    left: 20px;
+    top: 30px;
 
 }
 
@@ -70,25 +70,28 @@ h1 {
 /* body */
 h2 {
     font-family: sriracha;
-    
+    color: #2B9575;
     
 }
 
 h3 {
     font-family: molle;
+    color: #A37601;
 }
 
  p {
     font-family: kalam;
 }
 
-.honey-content img {
+
+.honey-content > img {
     height: auto;
     max-width: 50%;
+    margin-top: 20px;
     
 }
 
-.honey-content p {
+.honey-content > p {
     max-width: 50%;
 }
 
@@ -97,10 +100,43 @@ h3 {
     display: flex;
 }
 
+.text-list {
+    max-width: 50%;
+}
+
+.text-list > p {
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+.text-list > ul {
+    margin: 0;
+
+}
+
+li {
+    display: flex;
+    align-items: center; 
+    
+
+    font-family: kalam;
+}
+
+li::before {
+    content: url('images/honey-icon2.png');
+    padding-right: 10px;
+
+}
+
+.honey-image {
+    width: 300px;
+    height: auto;
+}
+
 /* body */
 
 
-/*footer */
+/* footer */
 
 .container {
     position: relative;
@@ -109,19 +145,19 @@ h3 {
 }
 .left-coner-image {
     position: absolute;
-    top: ;
-    left: ;
-    width: ;
+    top: 50px;
+    left: 20px;
+    width: 80px ;
     height: auto;
 }
 footer {
-    background-color: ;
-    color: ;
+    background-color: #BDD4CE;
     text-align: center;
-    padding: ;
+    padding: 20px;
     position: relative;
-    
+    display: flex;
 }
+
 footer .content {
     max-width: 800px;
     margin: 0 auto 25px ;
@@ -129,20 +165,32 @@ footer .content {
   
 }
 
-footer h1 {
+footer h2 {
     margin-top: 0;
     font-size: 40px;
     color:#2B9575;
+    font-family: sriracha;
 }
 footer p {
     margin: 0;
+    font-family: kalam; 
+    font-size:25px;
     
+}
+
+a {
+    color: #1c6650;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #2c8f71;
 }
 
 .footer-bottom{
     display:flex;
     width:100%;
-    padding: ;
+    padding: 10px 20px 0 20px;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -152,13 +200,15 @@ footer p {
 
 .footer-bottom .copyright {
     text-align: left;
+    margin-left: 20px;
 }
 
 footer .team-name {
     text-align: right;
+    margin-right: 20px;
 }
 
-/*footer */
+/* /footer */
 
 
 
