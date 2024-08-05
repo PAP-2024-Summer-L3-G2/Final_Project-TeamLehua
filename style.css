@@ -1,0 +1,165 @@
+body {
+    margin: 0px;
+}
+
+main {
+    padding: 140px;
+}
+
+html {
+    height: 100%;
+}
+
+div {
+    display: block;
+    margin: auto;
+}
+
+/* Nav Bar and Title */
+
+nav {
+    width: 100vw;
+    background-color: #FFB801;
+    text-align: center;
+}
+
+nav > #select-tabs {
+    background-color: #FFC634;
+    line-height: 40px;
+}
+
+nav > #select-tabs > a {
+    display: inline;
+    margin: 40px;
+    font-family: kalam;
+    font-size: 20px;
+
+    color: black;
+    text-decoration: none;
+
+}
+
+nav > #select-tabs > a:hover {
+    color: #288B6D;
+    text-decoration: underline;
+}
+
+nav > #select-tabs > .selected-tab {
+    color: #2B9575;
+}
+
+h1 {
+    font-family: pacifico;
+    font-size: 60px;
+    margin: auto;
+    line-height: 120px;
+    color: white;
+    font-weight: lighter;
+}
+
+#bee-gif {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+
+}
+
+/* /Nav Bar and Title */
+
+
+/* body */
+h2 {
+    font-family: sriracha;
+    
+    
+}
+
+h3 {
+    font-family: molle;
+}
+
+ p {
+    font-family: kalam;
+}
+
+.honey-content img {
+    height: auto;
+    max-width: 50%;
+    
+}
+
+.honey-content p {
+    max-width: 50%;
+}
+
+.honey-content {
+    align-items: center;
+    display: flex;
+}
+
+/* body */
+
+
+/*footer */
+
+.container {
+    position: relative;
+    flex-grow: 1;
+
+}
+.left-coner-image {
+    position: absolute;
+    top: ;
+    left: ;
+    width: ;
+    height: auto;
+}
+footer {
+    background-color: ;
+    color: ;
+    text-align: center;
+    padding: ;
+    position: relative;
+    
+}
+footer .content {
+    max-width: 800px;
+    margin: 0 auto 25px ;
+    text-align: center;
+  
+}
+
+footer h1 {
+    margin-top: 0;
+    font-size: 40px;
+    color:#2B9575;
+}
+footer p {
+    margin: 0;
+    
+}
+
+.footer-bottom{
+    display:flex;
+    width:100%;
+    padding: ;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+.footer-bottom .copyright {
+    text-align: left;
+}
+
+footer .team-name {
+    text-align: right;
+}
+
+/*footer */
+
+
+
+
