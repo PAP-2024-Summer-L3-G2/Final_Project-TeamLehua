@@ -38,13 +38,13 @@ const honeysSold = [
         "Size (oz)": 192,
         "Price ($)": 76.99
     },
-    //
+    // https://goldengirlshoneyandhives.com/product/fireweed-honey/
     {
-        "Color": "extra-white",
-        "Name": "Extra White Grade Raw Honey",
-        "Company": "Lappe's Bee Supply",
-        "Size (oz)": 7040,
-        "Price ($)": 2340
+        "Color": "white",
+        "Name": "Pacific Northwest Fireweed Honey",
+        "Company": "Golden Girls Honey",
+        "Size (oz)": 13,
+        "Price ($)": 16
     }, 
     // https://www.gorawhoney.com/product/wildflower-varietal-raw-honey-queen-bee-3lb/
     {
