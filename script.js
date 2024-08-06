@@ -1,7 +1,6 @@
 // Bee Flying Animation
 function makeBeeFly() {
     bee_static.src = 'images/bee-gif.gif';
-    console.log('im running!')
 }
 
 function makeBeeStop() {
@@ -85,3 +84,34 @@ const honeysSold = [
         "Price ($)": 19.99
     },
 ];
+
+// Types: Color, Name, Size (oz), Price ($)
+// Operators: >, < 
+function sortBy (type, biggerAtTop) {
+
+
+    if (biggerAtTop) {
+        honeysSold.sort((a, b) => {
+            return b[type] - a[type];
+        })
+    }
+    else {
+        honeysSold.sort((a, b) => {
+            return a[type] - b[type];
+        })
+    }
+
+}
+
+function textSortBy(type, biggerAtTop) {
+    if (biggerAtTop) {
+        honeysSold.sort((a, b) => {
+            return a[type].localeCompare(b[type]);
+        })
+    }
+    else {
+        honeysSold.sort((a, b) => {
+            return b[type].localeCompare(a[type]);
+        })
+    }
+}
