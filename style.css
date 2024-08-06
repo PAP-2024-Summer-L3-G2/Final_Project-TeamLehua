@@ -156,6 +156,7 @@ footer {
     padding: 20px;
     position: relative;
     display: flex;
+    height: 25px;
 }
 
 footer .content {
