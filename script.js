@@ -15,39 +15,73 @@ bee_static.addEventListener('mouseleave', makeBeeStop);
 
 // Shopping Filter
 
-
-/*
-1. Water White Honey
-Go Raw Honey
-Sizes: 12oz, 24oz, 3lb, 1 gallon (12lbs)
-Prices:
-12oz: $14.99
-24oz: $24.99
-3lb: $35.99
-1 gallon (12lbs): $76.99 (Go Raw Honey) (
-
-
-Water White Honey
-Honey Name: Clover Honey
-Company: Go Raw Honey
-Sizes: 12oz, 24oz, 3lb, 1 gallon (12lbs)
-Prices:
-12oz: $14.99
-24oz: $24.99
-3lb: $35.99
-1 gallon (12lbs): $76.99 (Go Raw Honey) (Go Raw Honey) (Go Raw Honey)
-Extra White Honey
-Honey Name: Extra White Grade Raw Honey
-Company: Lappe's Bee Supply
-Size: 55-gallon drum
-Price: $2,340.00 per 55-gallon drum (Lappe's Bee Supply and Honey Farm LLC)
-White Honey
-Honey Name: Clover Honey
-Company: Go Raw Honey
-Sizes: 12oz, 24oz, 3lb, 1 gallon (12lbs)
-Prices:
-12oz: $14.99
-24oz: $24.99
-3lb: $35.99
-1 gallon (12lbs): $76.99 (Go Raw Honey) (Go Raw Honey)
-*/
+const honeysSold = [
+    // https://www.gorawhoney.com/product-category/raw-clover-honey/
+    {
+        "Color": "extra-light-amber",
+        "Name": "Honey Bee Raw Clover Honey",
+        "Company": "Go Raw Honey",
+        "Size (oz)": 24,
+        "Price ($)": 24.99
+    },
+    {
+        "Color": "extra-light-amber",
+        "Name": "Queen Bee Raw Clover Honey",
+        "Company": "Go Raw Honey",
+        "Size (oz)": 48,
+        "Price ($)": 35.99
+    },
+    {
+        "Color": "extra-light-amber",
+        "Name": "Whole Hive Bulk Raw Honey",
+        "Company": "Go Raw Honey",
+        "Size (oz)": 192,
+        "Price ($)": 76.99
+    },
+    //
+    {
+        "Color": "extra-white",
+        "Name": "Extra White Grade Raw Honey",
+        "Company": "Lappe's Bee Supply",
+        "Size (oz)": 7040,
+        "Price ($)": 2340
+    }, 
+    // https://www.gorawhoney.com/product/wildflower-varietal-raw-honey-queen-bee-3lb/
+    {
+        "Color": "dark-amber",
+        "Name": "Wildflower Varietal Raw Honey Queen Bee",
+        "Company": "Go Raw Honey",
+        "Size (oz)": 48,
+        "Price ($)": 37.99
+    },
+    // https://www.smileyhoney.com/products/sourwood-honey
+    {
+        "Color": "light-amber",
+        "Name": "Sourwood Honey",
+        "Company": "Smiley Honey LLC",
+        "Size (oz)": 15,
+        "Price ($)": 16.5
+    },
+    {
+        "Color": "light-amber",
+        "Name": "Sourwood Honey",
+        "Company": "Smiley Honey LLC",
+        "Size (oz)": 16,
+        "Price ($)": 16
+    },
+    {
+        "Color": "light-amber",
+        "Name": "Sourwood Honey",
+        "Company": "Smiley Honey LLC",
+        "Size (oz)": 8,
+        "Price ($)": 8
+    },
+    // https://www.gorawhoney.com/product/baby-bee-12oz-pure-raw-clover-honey/
+    {
+        "Color": "extra-light-amber",
+        "Name": "Baby Bee Raw Clover Honey",
+        "Company": "Go Raw Honey",
+        "Size (oz)": 12,
+        "Price ($)": 19.99
+    },
+];
