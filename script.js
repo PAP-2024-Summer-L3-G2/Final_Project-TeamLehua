@@ -88,8 +88,6 @@ const honeysSold = [
 // Types: Color, Name, Size (oz), Price ($)
 // Operators: >, < 
 function sortBy (type, biggerAtTop) {
-
-
     if (biggerAtTop) {
         honeysSold.sort((a, b) => {
             return b[type] - a[type];
@@ -100,7 +98,6 @@ function sortBy (type, biggerAtTop) {
             return a[type] - b[type];
         })
     }
-
 }
 
 function textSortBy(type, biggerAtTop) {
