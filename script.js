@@ -15,39 +15,40 @@ bee_static.addEventListener('mouseleave', makeBeeStop);
 
 // Shopping Filter
 
-
-/*
-1. Water White Honey
-Go Raw Honey
-Sizes: 12oz, 24oz, 3lb, 1 gallon (12lbs)
-Prices:
-12oz: $14.99
-24oz: $24.99
-3lb: $35.99
-1 gallon (12lbs): $76.99 (Go Raw Honey) (
-
-
-Water White Honey
-Honey Name: Clover Honey
-Company: Go Raw Honey
-Sizes: 12oz, 24oz, 3lb, 1 gallon (12lbs)
-Prices:
-12oz: $14.99
-24oz: $24.99
-3lb: $35.99
-1 gallon (12lbs): $76.99 (Go Raw Honey) (Go Raw Honey) (Go Raw Honey)
-Extra White Honey
-Honey Name: Extra White Grade Raw Honey
-Company: Lappe's Bee Supply
-Size: 55-gallon drum
-Price: $2,340.00 per 55-gallon drum (Lappe's Bee Supply and Honey Farm LLC)
-White Honey
-Honey Name: Clover Honey
-Company: Go Raw Honey
-Sizes: 12oz, 24oz, 3lb, 1 gallon (12lbs)
-Prices:
-12oz: $14.99
-24oz: $24.99
-3lb: $35.99
-1 gallon (12lbs): $76.99 (Go Raw Honey) (Go Raw Honey)
-*/
+const honeysSold = [
+    {
+        "Color": "water-white",
+        "Name": "Clover Honey",
+        "Company": "Go Raw Honey",
+        "Size (oz)": 12,
+        "Price ($)": 14.99
+    },
+    {
+        "Color": "water-white",
+        "Name": "Clover Honey",
+        "Company": "Go Raw Honey",
+        "Size (oz)": 24,
+        "Price ($)": 24.99
+    },
+    {
+        "Color": "water-white",
+        "Name": "Clover Honey",
+        "Company": "Go Raw Honey",
+        "Size (oz)": 48,
+        "Price ($)": 35.99
+    },
+    {
+        "Color": "water-white",
+        "Name": "Clover Honey",
+        "Company": "Go Raw Honey",
+        "Size (oz)": 192,
+        "Price ($)": 76.99
+    },
+    {
+        "Color": "extra-white",
+        "Name": "Extra White Grade Raw Honey",
+        "Company": "Lappe's Bee Supply",
+        "Size (oz)": 7040,
+        "Price ($)": 2340
+    }
+];
