@@ -189,25 +189,15 @@ a:hover {
 }
 
 .footer-bottom{
-    display:flex;
-    width:100%;
-    padding: 10px 20px 0 20px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    display: flex;
+    justify-content: space-between; 
+    width: 100%;     
 }
 
 
-.footer-bottom .copyright {
-    text-align: left;
-    margin-left: 20px;
-}
 
-footer .team-name {
-    text-align: right;
-    margin-right: 20px;
-}
+
+
 
 /* /footer */
 
