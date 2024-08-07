@@ -65,6 +65,8 @@ h1 {
     position: absolute;
     left: 20px;
     top: 30px;
+    z-index: 10;
+   
 
 }
 
@@ -298,6 +300,9 @@ a:hover {
     position: absolute;
     left: 0px;
     top: 160px;
+    z-index: 5;
+    
+    
     
 }
 
