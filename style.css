@@ -1,5 +1,10 @@
 body {
     margin: 0px;
+    padding: 0;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+   
     
 
 }
@@ -99,6 +104,7 @@ p {
     max-width: 50%;
     margin-top: 20px;
     align-items: center;
+    margin-right: 30px;
     
 }
 
@@ -113,19 +119,22 @@ p {
     align-items: center;
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    margin: 30px;
     text-align: left;
     
    
+   
 }
 
-.honey-container {
-    display: flex;
-    flex-direction: column;
+ .honey-image2 {
+    flex-direction: row-reverse;
     align-items: center;
-    justify-content: center;
-    
+    display: flex;
 }
+
+
+    
+
 .text-list {
     max-width: 50%;
     margin-left: 20px;
@@ -165,11 +174,10 @@ li::before {
 
 .honey-image2 {
     width: 250px;
-    height: 250px;
-    margin-left: 0px;
-    display: flex;
+    height: auto;
+    margin-right: 25px;
     border: 20px solid #FFB801;
-    margin-right: 10px;
+   
 
     
 }
@@ -242,7 +250,12 @@ a:hover {
 .footer-bottom{
     display: flex;
     justify-content: space-between; 
-    width: 100%;     
+    width: 175vh; 
+    box-sizing: border-box;
+
+    
+   
+
 }
 
 /* /footer */
