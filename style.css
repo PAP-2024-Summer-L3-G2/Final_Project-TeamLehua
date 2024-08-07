@@ -79,13 +79,13 @@ h2 {
 }
 
 h3 {
-    font-family: playwrite hrvatska;
+    font-family: "playwrite hr";
     color: #A37601;
     text-align: center;
     
 }
 
- p {
+p {
     font-family: kalam;
     align-items: center;
     max-width: 400px;
