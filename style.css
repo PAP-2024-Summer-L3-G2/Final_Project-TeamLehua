@@ -24,6 +24,9 @@ div {
    
 }
 
+
+
+
 /* Nav Bar and Title */
 
 nav {
@@ -121,8 +124,8 @@ p {
     justify-content: center;
     margin: 30px;
     text-align: left;
+
     
-   
    
 }
 
@@ -130,6 +133,7 @@ p {
     flex-direction: row-reverse;
     align-items: center;
     display: flex;
+    margin: 30px;
 }
 
 

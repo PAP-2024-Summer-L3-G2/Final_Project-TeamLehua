@@ -12,6 +12,8 @@ bee_static.addEventListener('mouseover', makeBeeFly);
 bee_static.addEventListener('mouseleave', makeBeeStop);
 //
 
+
+
 // Shopping Filter
 
 const honeysSold = [
