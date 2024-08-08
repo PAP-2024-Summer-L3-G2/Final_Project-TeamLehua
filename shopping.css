@@ -119,8 +119,17 @@ a:hover {
     flex-wrap: wrap;
     justify-content: center;
     padding: 60px;
+
+
     
 }
+
+/* Image zoom in when hovered */
+.item > img:hover {
+    transform: scale(1.1);
+
+}  
+/* Image zoom in when hovered */
 
 .item {
     width: calc(33.333% - 20px);
