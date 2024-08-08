@@ -4,9 +4,6 @@ body {
     align-items: center;
     flex-direction: column;
     display: flex;
-   
-    
-
 }
 
 main {
@@ -131,7 +128,7 @@ p {
    
 }
 
- .honey-image2 {
+.honey-image2 {
     flex-direction: row-reverse;
     align-items: center;
     display: flex;
@@ -216,6 +213,8 @@ footer {
     position: relative;
     display: flex;
     height: 25px;
+    
+    width: 95vw;
 }
 
 footer .content {
@@ -250,8 +249,7 @@ a:hover {
 .footer-bottom {
     display: flex;
     justify-content: space-between; 
-    width: 175vh; 
-    box-sizing: border-box;
+    width: 100%;     
 
     
    

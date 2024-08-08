@@ -53,6 +53,7 @@ h1 {
     position: absolute;
     left: 20px;
     top: 30px;
+    z-index: 10;
 
 }
 
@@ -63,7 +64,6 @@ h1 {
 .container {
     position: relative;
     flex-grow: 1;
-
 }
 
 footer {
@@ -91,7 +91,7 @@ footer h2 {
 footer p {
     margin: 0;
     font-family: kalam; 
-    font-size:25px;
+    font-size: 25px;
     
 }
 
