@@ -99,43 +99,45 @@ const honeysSold = [
 
 // Types: Name, Size(oz), Price($)
 // If last 2 chars is pointing up, sort by biggest to smallest price/size
-function sortBy (typeSort, button) {
-
-    if (button.innerHTML.slice(-2) == "/\\") {
-        honeysSold.sort((a, b) => {
-            return b[typeSort] - a[typeSort];
-        })
-        resetAllOtherHTML()
-        button.innerHTML = button.innerHTML.slice(0, -2) + "\\/";
+function sortBy (typeSort) {
+    return function () { // Use this syntax, () => {} syntax doesn't work
+        if (this.innerHTML.slice(-2) == "/\\") {
+            honeysSold.sort((a, b) => {
+                return b[typeSort] - a[typeSort];
+            })
+            resetAllOtherHTML()
+            this.innerHTML = this.innerHTML.slice(0, -2) + "\\/";
+        }
+        else {
+            honeysSold.sort((a, b) => {
+                return a[typeSort] - b[typeSort];
+            })
+            resetAllOtherHTML()
+            this.innerHTML = this.innerHTML.slice(0, -2) + "/\\";
+        }
+        makeShoppingContent(honeysSold);
     }
-    else {
-        honeysSold.sort((a, b) => {
-            return a[typeSort] - b[typeSort];
-        })
-        resetAllOtherHTML()
-        button.innerHTML = button.innerHTML.slice(0, -2) + "/\\";
-    }
-    makeShoppingContent(honeysSold);
 }
 
 // If last 2 chars is pointing up, sort by A to Z
-function textSortBy(typeSort, button) {
-    
-    if (button.innerHTML.slice(-3) == "A-Z") {
-        honeysSold.sort((a, b) => {
-            return a[typeSort].localeCompare(b[typeSort]);
-        })
-        resetAllOtherHTML()
-        button.innerHTML = button.innerHTML.slice(0, -3) + "Z-A";
+function textSortBy(typeSort) {
+    return function () {
+        if (this.innerHTML.slice(-3) == "A-Z") {
+            honeysSold.sort((a, b) => {
+                return a[typeSort].localeCompare(b[typeSort]);
+            })
+            resetAllOtherHTML()
+            this.innerHTML = this.innerHTML.slice(0, -3) + "Z-A";
+        }
+        else {
+            honeysSold.sort((a, b) => {
+                return b[typeSort].localeCompare(a[typeSort]);
+            })
+            resetAllOtherHTML()
+            this.innerHTML = this.innerHTML.slice(0, -3) + "A-Z";
+        }
+        makeShoppingContent(honeysSold);
     }
-    else {
-        honeysSold.sort((a, b) => {
-            return b[typeSort].localeCompare(a[typeSort]);
-        })
-        resetAllOtherHTML()
-        button.innerHTML = button.innerHTML.slice(0, -3) + "A-Z";
-    }
-    makeShoppingContent(honeysSold);
 }
 //
 
@@ -177,7 +179,7 @@ const sizeSort = document.getElementById('size-sort');
 const colorSort = document.getElementById('color-sort');
 const nameSort = document.getElementById('name-sort');
 
-priceSort.addEventListener('click', () => {sortBy("Price($)", priceSort)}); 
-sizeSort.addEventListener('click', () => {sortBy("Size(oz)", sizeSort)});
+priceSort.addEventListener('click', sortBy("Price($)")); 
+sizeSort.addEventListener('click', sortBy("Size(oz)"));
 //colorSortSort.addEventListener('click', () => {sortBy("Price($)")});
-nameSort.addEventListener('click', () => {textSortBy("Name", nameSort)});
+nameSort.addEventListener('click', textSortBy("Name"));
