@@ -150,3 +150,11 @@ function makeShoppingContent(honeysSoldList) {
 }
 
 makeShoppingContent(honeysSold); 
+
+// Use filter/sorting buttons
+const priceSort = document.getElementById('price-sort');
+const sizeSort = document.getElementById('size-sort');
+const colorSort = document.getElementById('color-sort');
+const nameSort = document.getElementById('name-sort');
+
+priceSort.addEventListener('click', sortBy("Price ($)", true));
