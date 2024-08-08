@@ -3,7 +3,7 @@ body {
     padding: 0;
     align-items: center;
     flex-direction: column;
-    display: flex;
+   
 }
 
 main {
@@ -11,9 +11,7 @@ main {
     
 }
 
-html {
-    height: 100%;
-}
+
 
 div {
     display: block;
@@ -27,7 +25,7 @@ div {
 /* Nav Bar and Title */
 
 nav {
-    width: 100vw;
+
     background-color: #FFB801;
     text-align: center;
 }
@@ -214,13 +212,17 @@ footer {
     display: flex;
     height: 25px;
     
-    width: 95vw;
+ 
+    
+    
+   
 }
 
 footer .content {
     max-width: 800px;
     margin: 0 auto 25px ;
     text-align: center;
+    
   
 }
 
@@ -233,7 +235,7 @@ footer h2 {
 footer p {
     margin: 0;
     font-family: kalam; 
-    font-size:25px;
+    font-size: 25px;
     
 }
 

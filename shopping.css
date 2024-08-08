@@ -3,14 +3,12 @@ body {
 
 }
 
-html {
-    height: 100%;
-}
+
 
 /* Nav Bar and Title */
 
 nav {
-    width: 100vw;
+
     background-color: #FFB801;
     text-align: center;
 }
@@ -73,6 +71,9 @@ footer {
     position: relative;
     display: flex;
     height: 25px;
+
+
+    
 }
 
 footer .content {
@@ -107,7 +108,7 @@ a:hover {
 .footer-bottom {
     display: flex;
     justify-content: space-between; 
-    width: 100%;     
+    width: 100%;  
 }
 
 /* /footer */
@@ -195,7 +196,7 @@ main #filter-icon {
     margin-left: 20px;
 }
 main {
-    width: 100vw;
+
     text-align: center;
     margin: 10px auto;
 }
