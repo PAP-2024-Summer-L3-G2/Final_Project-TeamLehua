@@ -212,4 +212,23 @@ main {
     margin: 10px auto;
 }
 
+/* Filter buttons */
+
+#sorting-options {
+    top: 200px;
+    position: fixed;
+    display: none;
+    /*display: block; once visible*/
+}
+
+button {
+    background-color: #288B6D;
+    display: flex;
+}
+
+
+
+/* /Filter buttons */
+
 /* /New styles for the shopping page */
+

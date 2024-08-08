@@ -143,7 +143,10 @@ function textSortBy(typeSort) {
 
 //
 function resetAllOtherHTML() {
-
+    priceSort.innerHTML = "Price ($) /\\";
+    sizeSort.innerHTML= "Size (oz) /\\";
+    colorSort.innerHTML = "Color A-Z";
+    nameSort.innerHTML = "Name A-Z";
 }
 //
 
@@ -183,3 +186,29 @@ priceSort.addEventListener('click', sortBy("Price($)"));
 sizeSort.addEventListener('click', sortBy("Size(oz)"));
 //colorSortSort.addEventListener('click', () => {sortBy("Price($)")});
 nameSort.addEventListener('click', textSortBy("Name"));
+
+
+//
+const filterOrSortByButton = document.getElementById("shop-sorter");
+const sortingOptions = document.getElementById("sorting-options");
+filterOrSortByButton.addEventListener('click', () => {
+
+    if( sortingOptions.style.display == 'none' ) {
+        sortingOptions.style.display = "block";
+        console.log('it shows!') // why doesnt this work on the first click?
+    } else {
+        sortingOptions.style.display = 'none';
+    }
+
+})
+
+
+// To do's
+/*
+add more honeys typess
+add color sorter
+fix buttons css
+Make filter + options' locations relative, not fixed.
+
+fix img sizing and center in the page
+*/
