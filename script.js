@@ -205,6 +205,8 @@ filterOrSortByButton.addEventListener('click', () => {
 
 // To do's
 /*
+choose what stling to keep when merging in main
+
 add more honeys typess
 add color sorter
 fix buttons css

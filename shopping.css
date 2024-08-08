@@ -216,7 +216,7 @@ main {
 
 #sorting-options {
     top: 200px;
-    position: fixed;
+    position: absolute;
     display: none;
     /*display: block; once visible*/
 }
