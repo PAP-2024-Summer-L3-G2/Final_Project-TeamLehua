@@ -309,7 +309,7 @@ function clearFilters() {
 // To do's
 /*
 Make filter + options' locations relative, not fixed.
-change color's text later
+
 fix img sizing and center in the page
 
 */
