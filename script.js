@@ -48,7 +48,7 @@ const honeysSold = [
     }, 
     // https://www.gorawhoney.com/product/wildflower-varietal-raw-honey-queen-bee-3lb/
     {
-        "Color": "dark-amber",
+        "Color": "amber",
         "Name": "Wildflower Varietal Raw Honey Queen Bee",
         "Company": "Go Raw Honey",
         "Size(oz)": 48,
@@ -114,6 +114,60 @@ const honeysSold = [
         img: "images/manuka-honey.png",
         href: "https://www.swansonvitamins.com/p/wedderspoon-raw-manuka-honey-kfactor-16-17-6-oz-500-grams-jar?showPopup=f&a=1&DFA=1&utm_medium=shoppingads&utm_source=google&utm_campaign=shopping+standard+healthy+food&utm_content=&gclsrc=aw.ds&gad_source=1&gclid=Cj0KCQjw5ea1BhC6ARIsAEOG5pzneY_6p_fHgJEdq8fzXs8TPtA1hOEd-XcWYdRL5IOcUObPYUtx81YaAmRQEALw_wcB",
     },
+    {
+        "Color": "extra-white",
+        "Name": "Tupelo Honey",
+        "Company": "Savannah Bee Company",
+        "Size(oz)": 12,
+        "Price($)": 29,
+        img: "images/tupelo-honey.png",
+        href: "https://savannahbee.com/products/tupelo"
+    },
+    {
+        "Color": "dark-amber",
+        "Name": "Wild Huckleberry Honey",
+        "Company": "Huckleberry Haven",
+        "Size(oz)": 5,
+        "Price($)": 13,
+        img: "images/huckleberry-honey.png",
+        href: "https://hourloop.com/products/huckleberry-haven-h501?variant=39870707466298&currency=USD&utm_medium=organic&utm_source=google&utm_campaign=shopping&utm_content=Huckleberry+Haven+Wild+Huckleberry+Honey+5+oz,+Made+in+USA&srsltid=AfmBOoqMIrbDcFLeBhrshcQtKtGoQIfFkoD_uv9OqdXSRPGkMCFSRsale0M"
+    },
+    {
+        "Color": "light-amber",
+        "Name": "Minnesota Amber Honey",
+        "Company": "Bare Honey",
+        "Size(oz)": 48,
+        "Price($)": 37,
+        img: "images/minnesota-honey.png",
+        href: "https://barehoney.com/products/minnesota-amber-honey-48-oz-glass-jar"
+    },
+    {
+        "Color": "amber",
+        "Name": "Unpasteurized Chestnut Honey from Tuscany",
+        "Company": "Giannetti Artisans",
+        "Size(oz)": 17.63,
+        "Price($)": 17.99,
+        img: "images/chestnut-honey.png",
+        href: "https://www.amazon.com/Giannetti-Artisans-Unpasteurized-Chestnut-Tuscany/dp/B07NTNFM4G/ref=asc_df_B07NTNFM4G/?tag=hyprod-20&linkCode=df0&hvadid=692875362841&hvpos=&hvnetw=g&hvrand=1107868487070410115&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9033300&hvtargid=pla-2281435179578&psc=1&mcid=3f30335387e63e429c5ca6b5b43e22ba&hvocijid=1107868487070410115-B07NTNFM4G-&hvexpln=73&gad_source=1"
+    },
+    {
+        "Color": "dark-amber",
+        "Name": "Cold Packed Avocado Honey",
+        "Company": "Honey Pacifica",
+        "Size(oz)": 16,
+        "Price($)": 12,
+        img: "images/pacifica-honey.png",
+        href: "https://www.honeypacifica.com/cold-packed-avocado-honey/"
+    },
+    {
+        "Color": "water-white",
+        "Name": "Raw Honey",
+        "Company": "White Gold",
+        "Size(oz)": 23,
+        "Price($)": 17.99,
+        img: "images/white-gold-honey.png",
+        href: "https://www.amazon.com/White-Gold-Raw-Honey-Ounce/dp/B00424PJJ2/ref=asc_df_B00424PJJ2/?tag=hyprod-20&linkCode=df0&hvadid=692875362841&hvpos=&hvnetw=g&hvrand=12553825809731585641&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9033300&hvtargid=pla-2281435181458&psc=1&mcid=b80761bab7cb351cb682eb233480fa52&hvocijid=12553825809731585641-B00424PJJ2-&hvexpln=73&gad_source=1"
+    },
 ];
 
 // Types: Name, Size(oz), Price($)
@@ -166,6 +220,7 @@ function resetAllOtherHTML() {
     sizeSort.innerHTML= "Size (oz) /\\";
     nameSort.innerHTML = "Name A-Z";
     colorFilters.forEach( (colorFilter) => {colorFilter.style.display = 'none'});
+    colorSort.innerHTML = 'Color ...'; 
 }
 //
 
@@ -200,7 +255,7 @@ function makeShoppingContent(honeysSoldList) {
         container.innerHTML += 
         `<div class="item">
             <img src=${honeyItem["img"]} alt=${honeyItem["Name"]}>
-            <p>${honeyItem["Name"]}<br>${honeyItem["Size(oz)"]} oz.</p>
+            <p>${honeyItem["Name"]}<br><span style="font-style:italic; color: #288B6D;">by ${honeyItem["Company"]}</span><br>${honeyItem["Size(oz)"]} oz.</p>
             <p>Price: ${honeyItem["Price($)"].toLocaleString("en-US", {style:"currency", currency: "USD"})}</p> 
             <a href=${honeyItem["href"]} class="shopping-link" target="_blank">Shop Now</a>
         </div>`
