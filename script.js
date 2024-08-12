@@ -22,8 +22,8 @@ const honeysSold = [
         "Color": "extra-light-amber",
         "Name": "Queen Bee Raw Clover Honey",
         "Company": "Go Raw Honey",
-        "Size (oz)": 48,
-        "Price ($)": 35.99,
+        "Size(oz)": 48,
+        "Price($)": 35.99,
         img: "images/rawclove-removebg-preview.png",
         href: "https://www.gorawhoney.com/product-category/raw-clover-honey/"
     },
@@ -31,8 +31,8 @@ const honeysSold = [
         "Color": "extra-light-amber",
         "Name": "Whole Hive Bulk Raw Honey",
         "Company": "Go Raw Honey",
-        "Size (oz)": 192,
-        "Price ($)": 76.99,
+        "Size(oz)": 192,
+        "Price($)": 76.99,
         img: "images/bulk-raw-honey.jpg",
         href: "https://www.gorawhoney.com/product/whole-hive-1-gallon-pure-raw-clover-honey/"
     },
@@ -41,8 +41,8 @@ const honeysSold = [
         "Color": "white",
         "Name": "Pacific Northwest Fireweed Honey",
         "Company": "Golden Girls Honey",
-        "Size (oz)": 13,
-        "Price ($)": 16.00,
+        "Size(oz)": 13,
+        "Price($)": 16.00,
         img: "images/fireweed-removebg-preview.png",
         href: "https://goldengirlshoneyandhives.com/product/fireweed-honey/"
     }, 
@@ -51,8 +51,8 @@ const honeysSold = [
         "Color": "dark-amber",
         "Name": "Wildflower Varietal Raw Honey Queen Bee",
         "Company": "Go Raw Honey",
-        "Size (oz)": 48,
-        "Price ($)": 37.99,
+        "Size(oz)": 48,
+        "Price($)": 37.99,
         img: "images/Wildflower-QueenBee-800px-COMP-removebg-preview.png",
         href: "https://www.gorawhoney.com/product/wildflower-varietal-raw-honey-queen-bee-3lb/"
     },
@@ -61,8 +61,8 @@ const honeysSold = [
         "Color": "light-amber",
         "Name": "Sourwood Honey",
         "Company": "Smiley Honey LLC",
-        "Size (oz)": 15,
-        "Price ($)": 16.50,
+        "Size(oz)": 15,
+        "Price($)": 16.50,
         img: "images/15-oz-sourwood-honey.png",
         href: "https://www.smileyhoney.com/products/sourwood-honey?variant=6737072881694",
     },
@@ -70,8 +70,8 @@ const honeysSold = [
         "Color": "light-amber",
         "Name": "Sourwood Honey",
         "Company": "Smiley Honey LLC",
-        "Size (oz)": 16,
-        "Price ($)": 16.00,
+        "Size(oz)": 16,
+        "Price($)": 16.00,
         img: "images/16-oz-sour-wood-honey.png",
         href: "https://www.smileyhoney.com/products/sourwood-honey?variant=32984086152",
     },
@@ -80,8 +80,8 @@ const honeysSold = [
         "Color": "extra-light-amber",
         "Name": "Baby Bee Raw Clover Honey",
         "Company": "Go Raw Honey",
-        "Size (oz)": 12,
-        "Price ($)": 19.99,
+        "Size(oz)": 12,
+        "Price($)": 19.99,
         img: "images/Water_White_Honey-removebg-preview.png",
         href: "https://www.gorawhoney.com/product/baby-bee-12oz-pure-raw-clover-honey/",
     },
@@ -90,40 +90,63 @@ const honeysSold = [
         "Color": "extra-light-amber",
         "Name": "Honey Bee Raw Clover Honey",
         "Company": "Go Raw Honey",
-        "Size (oz)": 24,
-        "Price ($)": 24.99,
+        "Size(oz)": 24,
+        "Price($)": 24.99,
         img: "images/last_Honey-Bee-OnWhite-removebg-preview.png",
         href: "https://www.gorawhoney.com/product/honey-bee-24oz-pure-raw-clover-honey/",
     },
 ];
 
-// Types: Name, Size (oz), Price ($)
-function sortBy (type, biggerAtTop) {
-    if (biggerAtTop) {
-        honeysSold.sort((a, b) => {
-            return b[type] - a[type];
-        })
+// Types: Name, Size(oz), Price($)
+// If last 2 chars is pointing up, sort by biggest to smallest price/size
+function sortBy (typeSort) {
+    return function () { // Use this syntax, () => {} syntax doesn't work
+        if (this.innerHTML.slice(-2) == "/\\") {
+            honeysSold.sort((a, b) => {
+                return b[typeSort] - a[typeSort];
+            })
+            resetAllOtherHTML()
+            this.innerHTML = this.innerHTML.slice(0, -2) + "\\/";
+        }
+        else {
+            honeysSold.sort((a, b) => {
+                return a[typeSort] - b[typeSort];
+            })
+            resetAllOtherHTML()
+            this.innerHTML = this.innerHTML.slice(0, -2) + "/\\";
+        }
+        makeShoppingContent(honeysSold);
     }
-    else {
-        honeysSold.sort((a, b) => {
-            return a[type] - b[type];
-        })
-    }
-    makeShoppingContent(honeysSold);
 }
 
-function textSortBy(type, AToZ) {
-    if (AToZ) {
-        honeysSold.sort((a, b) => {
-            return a[type].localeCompare(b[type]);
-        })
+// If last 2 chars is pointing up, sort by A to Z
+function textSortBy(typeSort) {
+    return function () {
+        if (this.innerHTML.slice(-3) == "A-Z") {
+            honeysSold.sort((a, b) => {
+                return a[typeSort].localeCompare(b[typeSort]);
+            })
+            resetAllOtherHTML()
+            this.innerHTML = this.innerHTML.slice(0, -3) + "Z-A";
+        }
+        else {
+            honeysSold.sort((a, b) => {
+                return b[typeSort].localeCompare(a[typeSort]);
+            })
+            resetAllOtherHTML()
+            this.innerHTML = this.innerHTML.slice(0, -3) + "A-Z";
+        }
+        makeShoppingContent(honeysSold);
     }
-    else {
-        honeysSold.sort((a, b) => {
-            return b[type].localeCompare(a[type]);
-        })
-    }
-    makeShoppingContent(honeysSold);
+}
+//
+
+//
+function resetAllOtherHTML() {
+    priceSort.innerHTML = "Price ($) /\\";
+    sizeSort.innerHTML= "Size (oz) /\\";
+    colorSort.innerHTML = "Color A-Z";
+    nameSort.innerHTML = "Name A-Z";
 }
 //
 
@@ -144,8 +167,8 @@ function makeShoppingContent(honeysSoldList) {
         container.innerHTML += 
         `<div class="item">
             <img src=${honeyItem["img"]} alt=${honeyItem["Name"]}>
-            <p>${honeyItem["Name"]}<br>${honeyItem["Size (oz)"]} oz.</p>
-            <p>Price: ${honeyItem["Price ($)"].toLocaleString("en-US", {style:"currency", currency: "USD"})}</p> 
+            <p>${honeyItem["Name"]}<br>${honeyItem["Size(oz)"]} oz.</p>
+            <p>Price: ${honeyItem["Price($)"].toLocaleString("en-US", {style:"currency", currency: "USD"})}</p> 
             <a href=${honeyItem["href"]} class="shopping-link" target="_blank">Shop Now</a>
         </div>`
     });
@@ -159,4 +182,35 @@ const sizeSort = document.getElementById('size-sort');
 const colorSort = document.getElementById('color-sort');
 const nameSort = document.getElementById('name-sort');
 
-priceSort.addEventListener('click', sortBy("Price ($)", true));
+priceSort.addEventListener('click', sortBy("Price($)")); 
+sizeSort.addEventListener('click', sortBy("Size(oz)"));
+//colorSortSort.addEventListener('click', () => {sortBy("Price($)")});
+nameSort.addEventListener('click', textSortBy("Name"));
+
+
+//
+const filterOrSortByButton = document.getElementById("shop-sorter");
+const sortingOptions = document.getElementById("sorting-options");
+filterOrSortByButton.addEventListener('click', () => {
+
+    if( sortingOptions.style.display == 'none' ) {
+        sortingOptions.style.display = "block";
+        console.log('it shows!') // why doesnt this work on the first click?
+    } else {
+        sortingOptions.style.display = 'none';
+    }
+
+})
+
+
+// To do's
+/*
+choose what styling to keep when merging in main
+
+add more honeys typess
+add color sorter
+fix buttons css
+Make filter + options' locations relative, not fixed.
+
+fix img sizing and center in the page
+*/
