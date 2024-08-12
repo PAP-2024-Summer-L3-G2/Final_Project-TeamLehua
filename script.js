@@ -262,7 +262,7 @@ function makeShoppingContent(honeysSoldList) {
     });
 }
 
-makeShoppingContent(honeysSold); // Page on initial load
+makeShoppingContent(honeysSold); // Page content displayed on initial load
 
 // Use filter/sorting buttons
 const priceSort = document.getElementById('price-sort');
@@ -297,6 +297,14 @@ filterOrSortByButton.addEventListener('click', function() {
 
 })
 
+// Clear filters
+const clearFilterIcon = document.getElementById('x-icon');
+clearFilterIcon.addEventListener('click', clearFilters);
+
+function clearFilters() {
+    makeShoppingContent(honeysSold);
+    resetAllOtherHTML();
+}
 
 // To do's
 /*
@@ -304,5 +312,4 @@ Make filter + options' locations relative, not fixed.
 change color's text later
 fix img sizing and center in the page
 
-reset filters
 */

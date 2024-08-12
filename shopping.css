@@ -212,6 +212,12 @@ main #filter-icon {
     height: 50%;
     margin-left: 20px;
 }
+main #x-icon {
+    max-width: 50%;
+    height: 50%;
+    margin-left: 5px;
+}
+
 main {
 
     text-align: center;
