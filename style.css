@@ -98,10 +98,9 @@ p {
 }
 
 
-
 .honey-content > img {
-    height: 200px;
-    max-width: 50%;
+    height: 150px;
+    width: auto;
     margin-top: 20px;
     align-items: center;
     margin-right: 10px;
@@ -112,8 +111,8 @@ p {
 
 /* Image zoom in when hovered */
 .honey-content > img:hover {
-    transform: scale(1.1);
-
+    transform: scale(1.025);
+    transition: linear(0.2);
 }  
 
 /* Image zoom in when hovered */
@@ -122,7 +121,6 @@ p {
 
 .honey-content > p {
     align-items: center;
-   
     margin-left: 0px;
     
 }
@@ -133,20 +131,8 @@ p {
     justify-content: center;
     margin: 30px;
     text-align: left;
-
-    
-   
 }
 
-.honey-image2 {
-    flex-direction: row-reverse;
-    align-items: center;
-    display: flex;
-    margin: 30px;
-}
-
-
-    
 
 .text-list {
     max-width: 50%;
@@ -167,8 +153,6 @@ p {
 li {
     display: flex;
     align-items: center; 
-    
-
     font-family: kalam;
 }
 
@@ -177,8 +161,6 @@ li::before {
     padding-right: 10px;
 
 }
-
-
 
 .honey-image {
     width: 230px;
@@ -197,10 +179,6 @@ li::before {
     
    
 }
-
-
-
-
 
 
 
