@@ -1,13 +1,19 @@
 body {
     margin: 0px;
     padding: 0;
-    align-items: center;
-    flex-direction: column;
+
+    
+   
    
 }
 
 main {
     padding: 140px;
+
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     
 }
 
@@ -94,7 +100,7 @@ p {
     font-family: kalam;
     align-items: center;
     max-width: 400px;
-    margin-right: 25px;
+    margin-right:0 20px;
 }
 
 
@@ -120,6 +126,7 @@ p {
 
 
 .honey-content > p {
+
     align-items: center;
     margin-left: 0px;
     
@@ -136,13 +143,16 @@ p {
 
 .text-list {
     max-width: 50%;
-    margin-left: 20px;
+   
     text-align: left;
 }
 
 .text-list > p {
     margin-bottom: 10px;
     padding-left: 20px;
+
+    line-height: 1.6;
+    word-wrap: break-word;
 }
 
 .text-list > ul {
@@ -169,12 +179,14 @@ li::before {
     border: 20px solid #FFB801;
 }
 .honey-image2 {
+
     flex-direction: row-reverse;
     align-items: center;
     display: flex;
-    margin: 0px 20px;
+    
+    margin: 0px 10px;
     height: auto;
-    width: 250px;
+    width: 48%;
     border: 20px solid #FFB801;
     
    
@@ -182,7 +194,47 @@ li::before {
 
 
 
+
+
+
+
 /* body */
+
+
+/* New CSS class for overlapping images */
+
+.overlap-container {
+    position: relative;
+    width: fit-content;
+}
+
+
+
+ .overlap-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0.8; 
+    z-index: 1;
+ }
+
+
+.overlap-image:first-child {
+    z-index: 2; 
+}
+
+
+
+
+.inline-text {
+    grid-template-areas: 
+    "text text"
+    "img1 img2";
+}
+
+
 
 
 /* footer */
