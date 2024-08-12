@@ -166,6 +166,7 @@ a:hover {
     border-radius: 5px;
     font-family: 'Verdana', sans-serif;
 
+
 }
 .shopping-link:hover {
     background-color:#035dbd;
@@ -193,6 +194,7 @@ a:hover {
 
 #shop-filter-all {
     opacity: 50%;
+    transition: opacity 0.25s ease;
 }
 
 #shop-filter-all:hover {
