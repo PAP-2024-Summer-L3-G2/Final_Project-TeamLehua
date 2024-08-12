@@ -307,10 +307,4 @@ function clearFilters() {
     resetAllOtherHTML();
 }
 
-// To do's
-/*
-Make filter + options' locations relative, not fixed.
 
-fix img sizing and center in the page
-
-*/
