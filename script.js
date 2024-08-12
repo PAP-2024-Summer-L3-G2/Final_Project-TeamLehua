@@ -173,22 +173,21 @@ function resetAllOtherHTML() {
 function filterColor(colorWanted) {
     return function() {
         let filteredHoneys = honeysSold.filter((honey) => {
-            honey["Color"] === colorWanted;
+            return honey["Color"] == colorWanted; 
         })
         makeShoppingContent(filteredHoneys);
 
-        console.log(this.id) //is a problem, doesnt choose the id i want
     }
 }   
 
 function toggleColorFilterOptions() {
     if( colorSort.innerHTML.slice(-3) == '...' ) {
         resetAllOtherHTML();
-        colorFilters.forEach( (colorFilter) => {colorFilter.style.display = 'block'}); 
-        colorSort.innerHTML = 'Color -';   
-    } else {
-        colorSort.innerHTML = 'Color ...';   
+        colorFilters.forEach( (colorFilter) => {colorFilter.style.display = 'block'});
+        colorSort.innerHTML = 'Color';   
+    } else {  
         colorFilters.forEach( (colorFilter) => {colorFilter.style.display = 'none'}); 
+        colorSort.innerHTML = 'Color ...'; 
     }
 }
 //
@@ -208,33 +207,38 @@ function makeShoppingContent(honeysSoldList) {
     });
 }
 
-makeShoppingContent(honeysSold); 
+makeShoppingContent(honeysSold); // Page on initial load
 
 // Use filter/sorting buttons
 const priceSort = document.getElementById('price-sort');
 const sizeSort = document.getElementById('size-sort');
 const colorSort = document.getElementById('color-sort');
-const colorFilters = document.querySelectorAll('#color-filter');
+const colorFilters = document.querySelectorAll('.color-filter-button');
 const nameSort = document.getElementById('name-sort');
 
 priceSort.addEventListener('click', sortBy("Price($)")); 
 sizeSort.addEventListener('click', sortBy("Size(oz)"));
 colorSort.addEventListener('click', toggleColorFilterOptions);
-colorFilters.forEach( (colorFilter) => {colorFilter.addEventListener('click', filterColor(colorFilter.id) )});
+colorFilters.forEach( (colorFilter) => { 
+    colorFilter.addEventListener('click', filterColor(colorFilter.id) )}); 
 nameSort.addEventListener('click', textSortBy("Name"));
 
 
 //
 const filterOrSortByButton = document.getElementById("shop-sorter");
 const sortingOptions = document.getElementById("sorting-options");
-filterOrSortByButton.addEventListener('click', () => {
-
-    if( sortingOptions.style.display == 'none' ) {
+filterOrSortByButton.addEventListener('click', function() {
+    
+    // getComputedStyle function takes the final display style to compare, unlike sortingOptions.style.display == 'none'.
+    // Alternatively, you can add this:[style="display: none"] line of code in <div id='sorting-options'> in the HTML file, 
+    // along with this:[sortingOptions.style.display == 'none'] in the if statement
+    // (it reads the css first, so it thinks display="" instead of 'none'!).
+    if( getComputedStyle(sortingOptions).display == 'none') {
         sortingOptions.style.display = "block";
-        console.log('it shows!') // why doesnt this work on the first click?
     } else {
-        sortingOptions.style.display = 'none';
+        sortingOptions.style.display = 'none';   
     }
+    
 
 })
 
@@ -242,7 +246,8 @@ filterOrSortByButton.addEventListener('click', () => {
 // To do's
 /*
 Make filter + options' locations relative, not fixed.
-
 change color's text later
 fix img sizing and center in the page
+
+reset filters
 */
