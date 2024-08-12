@@ -29,21 +29,32 @@
 
     <main>
         
-        <!--TO DO: make filter, stop the screen from being horiz scrollable-->
+        <div id="shop-filter-all">
+            <div id="shop-sorter">
+                <h2>Sort/Filter by</h2>
+                <img id='filter-icon' src="images/filter-icon.png">
+                
+            </div>
+            <div id='sorting-options'>
+                <button id="price-sort">Price ($) /\</button>
+                <button id="size-sort">Size (oz) /\</button>
+                <button id="name-sort">Name A-Z</button>
+                <button id="color-sort">Color ...</button>
+                <div id="color-filter">
+                    <button id="water-white" class='color-filter-button'>Water White</button>
+                    <button id="extra-white" class='color-filter-button'>Extra White</button>
+                    <button id="white" class='color-filter-button'>White</button>
+                    <button id="extra-light-amber" class='color-filter-button'>Extra Light Amber</button>
+                    <button id="light-amber" class='color-filter-button'>Light Amber</button>
+                    <button id="amber" class='color-filter-button'>Amber</button>
+                    <button id="dark-amber" class='color-filter-button'>Dark Amber</button>
+                </div>
+                
+            </div>
+            
+        </div>
 
-        <div id="shop-sorter">
-            <h2>Sort/Filter by</h2>
-            <img id='filter-icon' src="images/filter-icon.png">
-        </div>
-        <div id='sorting-options'>
-            <button id="price-sort">Price ($) /\</button>
-            <button id="size-sort">Size (oz) /\</button>
-            <button id="color-sort">Color A-Z</button>
-            <button id="name-sort">Name A-Z</button>
-        </div>
-        <div class="shopping-container">
-            
-            
+        <div class="shopping-container"> <!--Gets filled in with the JS-->
         </div>
     </main>
 

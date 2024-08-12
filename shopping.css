@@ -128,7 +128,8 @@ a:hover {
 
 /* Image zoom in when hovered */
 .item > img:hover {
-    transform: scale(1.1);
+    transform: scale(1.025);
+    transition: linear 0.2s;
 
 }  
 /* Image zoom in when hovered */
@@ -174,21 +175,27 @@ a:hover {
 
 #shop-sorter {
     background-color: #2c8f71;
-    opacity: 50%;
     width: 200px;
     height: 40px;
     display: flex;
     align-items: center;
     
-    position: absolute;
+    position: absolute; /*make relative*/
     left: 0px;
     top: 160px;
 
     font-family: sriracha;
     
+    border-style: solid;
+    border-color:rgb(47, 153, 121);
+    box-sizing: border-box;
 }
 
-#shop-sorter:hover {
+#shop-filter-all {
+    opacity: 50%;
+}
+
+#shop-filter-all:hover {
     opacity: 100%;
 }
 
@@ -211,4 +218,41 @@ main {
     margin: 10px auto;
 }
 
+/* Filter buttons */
+
+#sorting-options {
+
+    top: 200px;
+    position: absolute; /*make relative*/
+    display: none;
+    /*display: block; once visible*/
+}
+
+button {
+    background-color: #288B6D;
+    display: flex;
+    border-style: solid;
+    border-color:rgb(47, 153, 121);
+    color: white;
+    width: 130px;
+}
+
+button:hover {
+    background-color: #2d9e7c;
+}
+
+#color-filter {
+    display: none;
+    padding-left: 5px;
+ 
+}
+
+.color-filter-button {
+    width: 125px;
+    font-style: italic;
+}
+
+/* /Filter buttons */
+
 /* /New styles for the shopping page */
+

@@ -33,7 +33,7 @@ const honeysSold = [
         "Company": "Go Raw Honey",
         "Size(oz)": 192,
         "Price($)": 76.99,
-        img: "images/bulk-raw-honey.jpg",
+        img: "images/bulk-raw-honey.png",
         href: "https://www.gorawhoney.com/product/whole-hive-1-gallon-pure-raw-clover-honey/"
     },
     // https://goldengirlshoneyandhives.com/product/fireweed-honey/
@@ -95,6 +95,25 @@ const honeysSold = [
         img: "images/last_Honey-Bee-OnWhite-removebg-preview.png",
         href: "https://www.gorawhoney.com/product/honey-bee-24oz-pure-raw-clover-honey/",
     },
+    //
+    {
+        "Color": "water-white",
+        "Name": "Raw Organic Ohi'a Lehua Blossom Honey",
+        "Company": "Big Island Bees Honey",
+        "Size(oz)": 9,
+        "Price($)": 15.59,
+        img: "images/ohia-lehua-honey.png",
+        href: "https://www.instacart.com/products/49706-big-island-bees-honey-hawaiian-organic-ohi-a-lehua-blossom-9-00-oz?retailer_id=257&region_id=2422193604&utm_medium=sem_shopping&utm_source=instacart_google&utm_campaign=ad_demand_shopping_rp_food_all-non-ca_evergreen&utm_content=accountid-8145171519_campaignid-19906372963_adgroupid-150626721754_device-c&utm_term=targetid-pla-1390999193264_locationid-9033300_adtype-pla_productchannel-online_merchantid-260496658_storecode-_productid-49706&gad_source=1&gclid=Cj0KCQjw5ea1BhC6ARIsAEOG5pwjElQjmaVg5Pwi9aEraEy67GmQpDrXLILi1jXH_3XaRuHOIG1-jJkaAru5EALw_wcB",
+    },
+    {
+        "Color": "dark-amber",
+        "Name": "Raw Monofloral Manuka Honey KFactor-16",
+        "Company": "Wedderspoon",
+        "Size(oz)": 17.6,
+        "Price($)": 35.48,
+        img: "images/manuka-honey.png",
+        href: "https://www.swansonvitamins.com/p/wedderspoon-raw-manuka-honey-kfactor-16-17-6-oz-500-grams-jar?showPopup=f&a=1&DFA=1&utm_medium=shoppingads&utm_source=google&utm_campaign=shopping+standard+healthy+food&utm_content=&gclsrc=aw.ds&gad_source=1&gclid=Cj0KCQjw5ea1BhC6ARIsAEOG5pzneY_6p_fHgJEdq8fzXs8TPtA1hOEd-XcWYdRL5IOcUObPYUtx81YaAmRQEALw_wcB",
+    },
 ];
 
 // Types: Name, Size(oz), Price($)
@@ -143,17 +162,35 @@ function textSortBy(typeSort) {
 
 //
 function resetAllOtherHTML() {
-
+    priceSort.innerHTML = "Price ($) /\\";
+    sizeSort.innerHTML= "Size (oz) /\\";
+    nameSort.innerHTML = "Name A-Z";
+    colorFilters.forEach( (colorFilter) => {colorFilter.style.display = 'none'});
 }
 //
 
 // Color filter
 function filterColor(colorWanted) {
-    let filteredHoneys = honeysSold.filter((honey) => {
-        honey["Color"] === colorWanted;
-    })
-    makeShoppingContent(filteredHoneys);
+    return function() {
+        let filteredHoneys = honeysSold.filter((honey) => {
+            honey["Color"] === colorWanted;
+        })
+        makeShoppingContent(filteredHoneys);
+
+        console.log(this.id) //is a problem, doesnt choose the id i want
+    }
 }   
+
+function toggleColorFilterOptions() {
+    if( colorSort.innerHTML.slice(-3) == '...' ) {
+        resetAllOtherHTML();
+        colorFilters.forEach( (colorFilter) => {colorFilter.style.display = 'block'}); 
+        colorSort.innerHTML = 'Color -';   
+    } else {
+        colorSort.innerHTML = 'Color ...';   
+        colorFilters.forEach( (colorFilter) => {colorFilter.style.display = 'none'}); 
+    }
+}
 //
 
 // Put shopping items on the webpage 
@@ -177,9 +214,35 @@ makeShoppingContent(honeysSold);
 const priceSort = document.getElementById('price-sort');
 const sizeSort = document.getElementById('size-sort');
 const colorSort = document.getElementById('color-sort');
+const colorFilters = document.querySelectorAll('#color-filter');
 const nameSort = document.getElementById('name-sort');
 
 priceSort.addEventListener('click', sortBy("Price($)")); 
 sizeSort.addEventListener('click', sortBy("Size(oz)"));
-//colorSortSort.addEventListener('click', () => {sortBy("Price($)")});
+colorSort.addEventListener('click', toggleColorFilterOptions);
+colorFilters.forEach( (colorFilter) => {colorFilter.addEventListener('click', filterColor(colorFilter.id) )});
 nameSort.addEventListener('click', textSortBy("Name"));
+
+
+//
+const filterOrSortByButton = document.getElementById("shop-sorter");
+const sortingOptions = document.getElementById("sorting-options");
+filterOrSortByButton.addEventListener('click', () => {
+
+    if( sortingOptions.style.display == 'none' ) {
+        sortingOptions.style.display = "block";
+        console.log('it shows!') // why doesnt this work on the first click?
+    } else {
+        sortingOptions.style.display = 'none';
+    }
+
+})
+
+
+// To do's
+/*
+Make filter + options' locations relative, not fixed.
+
+change color's text later
+fix img sizing and center in the page
+*/

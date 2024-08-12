@@ -112,7 +112,7 @@ p {
 /* Image zoom in when hovered */
 .honey-content > img:hover {
     transform: scale(1.025);
-    transition: linear(0.2);
+    transition: linear 0.2s;
 }  
 
 /* Image zoom in when hovered */
