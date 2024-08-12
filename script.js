@@ -246,7 +246,6 @@ filterOrSortByButton.addEventListener('click', function() {
 // To do's
 /*
 Make filter + options' locations relative, not fixed.
-fix filter toggle
 change color's text later
 fix img sizing and center in the page
 
