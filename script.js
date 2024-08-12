@@ -221,6 +221,7 @@ function resetAllOtherHTML() {
     nameSort.innerHTML = "Name A-Z";
     colorFilters.forEach( (colorFilter) => {colorFilter.style.display = 'none'});
     colorSort.innerHTML = 'Color ...'; 
+    
 }
 //
 
@@ -280,7 +281,7 @@ nameSort.addEventListener('click', textSortBy("Name"));
 
 
 //
-const filterOrSortByButton = document.getElementById("shop-sorter");
+const filterOrSortByButton = document.getElementById("filter-icon");
 const sortingOptions = document.getElementById("sorting-options");
 filterOrSortByButton.addEventListener('click', function() {
     
