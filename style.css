@@ -15,6 +15,8 @@ main {
     flex-direction: column;
     align-items: center;
     
+    
+    
 }
 
 
@@ -107,7 +109,8 @@ p {
 .honey-content > img {
     height: 150px;
     width: auto;
-    margin-top: 20px;
+    padding: 15px;
+    margin-top: 40px;
     align-items: center;
     margin-right: 10px;
 
@@ -138,6 +141,8 @@ p {
     justify-content: center;
     margin: 30px;
     text-align: left;
+    padding: 20px;
+    
 }
 
 
@@ -176,9 +181,11 @@ li::before {
     width: 230px;
     height: auto;
     margin-right: 25px;
-    border: 20px solid #FFB801;
+    border: 10px solid #FFB801;
 }
-.honey-image2 {
+
+/* No longer used for images
+.honey-image3 {
 
     flex-direction: row-reverse;
     align-items: center;
@@ -189,8 +196,8 @@ li::before {
     width: 48%;
     border: 20px solid #FFB801;
     
-   
 }
+*/
 
 
 
@@ -203,38 +210,58 @@ li::before {
 
 /* New CSS class for overlapping images */
 
-.overlap-container {
+.image-set {
+    width: 263px;
+    height: 300px;
     position: relative;
-    width: fit-content;
+    box-sizing: border-box;
+    
 }
-
-
-
- .overlap-image {
+.honey-image1 {
     position: absolute;
-    top: 0;
+    top: 0px;
+    right: 1200;
+
+    width: 200px;
+    height: 133px;
+    object-fit: cover;
+
+    
+}
+.honey-image2 {
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    
+
+    width: 143px;
+    min-height: 145px;
+    object-fit: cover;
+
+    margin-top: 70px;
+}
+
+.box-1 {
+    background-color: #FFB801;
+    height: 133px;
+    margin-left: 10px;
+    width: 50px;
+    position: absolute;
+    right: 0;
+}
+
+.box-2 {
+    background-color: #FFB801;
+    height: 145px;
+    margin-right: 10px;
+    width: 100px;
+    position: absolute;
+    bottom: 0;
     left: 0;
-    width: 100%;
-    height: auto;
-    opacity: 0.8; 
-    z-index: 1;
- }
-
-
-.overlap-image:first-child {
-    z-index: 2; 
 }
 
 
-
-
-.inline-text {
-    grid-template-areas: 
-    "text text"
-    "img1 img2";
-}
-
-
+/* /New CSS class for overlapping images */
 
 
 /* footer */
